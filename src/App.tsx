@@ -1393,8 +1393,7 @@ const App = () => {
               <ChefHat size={24} />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-orange-600 leading-tight">家常小菜</h1>
-              <p className="text-xs text-orange-400 font-medium">Daily Home Cooking</p>
+              <h1 className="text-xl font-bold text-orange-600 leading-tight">家常小菜 Daily Home Cooking</h1>
             </div>
           </div>
 
