@@ -26,7 +26,7 @@ type Recipe = {
   titleEN: string;
   titleTL: string;
   titleID: string;
-  emoji: string;
+  image: string; // Image URL
   time: string;
   servings: string;
   ingredients: Ingredient[];
@@ -35,7 +35,7 @@ type Recipe = {
   tags: string[];
 };
 
-// Data with Translations
+// Data with Local Images (Now using .png)
 const recipes: Recipe[] = [
   // --- PORK RECIPES ---
   {
@@ -45,7 +45,7 @@ const recipes: Recipe[] = [
     titleEN: 'Braised Pork Ribs with Potato',
     titleTL: 'Adobong Tadyang ng Baboy na may Patatas',
     titleID: 'Iga Babi Braised dengan Kentang',
-    emoji: '🥘',
+    image: '/recipes/1.png',
     time: '45 min',
     servings: '2-3',
     ingredients: [
@@ -94,7 +94,7 @@ const recipes: Recipe[] = [
     titleEN: 'Stir-fried Pork with Broccoli',
     titleTL: 'Ginisang Baboy na may Brokoli',
     titleID: 'Tumis Daging Babi dengan Brokoli',
-    emoji: '🥦',
+    image: '/recipes/2.png',
     time: '20 min',
     servings: '2',
     ingredients: [
@@ -136,7 +136,7 @@ const recipes: Recipe[] = [
     titleEN: 'Carrot & Corn Pork Soup',
     titleTL: 'Sopas na Mais at Karot na may Baboy',
     titleID: 'Sup Wortel & Jagung Daging Babi',
-    emoji: '🍲',
+    image: '/recipes/3.png',
     time: '90 min',
     servings: '4',
     ingredients: [
@@ -176,7 +176,7 @@ const recipes: Recipe[] = [
     titleEN: 'Stir-fry Napa Cabbage w/ Pork',
     titleTL: 'Ginisang Napa Cabbage na may Baboy',
     titleID: 'Tumis Sawi Putih dengan Daging Babi',
-    emoji: '🥬',
+    image: '/recipes/4.png',
     time: '15 min',
     servings: '2',
     ingredients: [
@@ -217,7 +217,7 @@ const recipes: Recipe[] = [
     titleEN: 'Steamed Minced Pork Patty',
     titleTL: 'Steamed Giniling na Baboy',
     titleID: 'Tim Daging Babi Cincang',
-    emoji: '🍘',
+    image: '/recipes/5.png',
     time: '25 min',
     servings: '3',
     ingredients: [
@@ -258,7 +258,7 @@ const recipes: Recipe[] = [
     titleEN: 'Salt & Pepper Pork Chops',
     titleTL: 'Pork Chop na may Asin at Paminta',
     titleID: 'Babi Goreng Garam & Lada',
-    emoji: '🍖',
+    image: '/recipes/6.png',
     time: '20 min',
     servings: '2',
     ingredients: [
@@ -292,7 +292,7 @@ const recipes: Recipe[] = [
     titleEN: 'Taiwanese Braised Pork Rice',
     titleTL: 'Taiwanese Braised Pork Rice',
     titleID: 'Nasi Babi Kecap Taiwan',
-    emoji: '🍚',
+    image: '/recipes/24.png',
     time: '60 min',
     servings: '3-4',
     ingredients: [
@@ -344,7 +344,7 @@ const recipes: Recipe[] = [
     titleEN: 'Beef with Broccoli',
     titleTL: 'Baka na may Brokoli',
     titleID: 'Sapi dengan Brokoli',
-    emoji: '🥩',
+    image: '/recipes/7.png',
     time: '20 min',
     servings: '2',
     ingredients: [
@@ -385,7 +385,7 @@ const recipes: Recipe[] = [
     titleEN: 'Stir-fried Beef w/ Choy Sum',
     titleTL: 'Ginisang Baka na may Choy Sum',
     titleID: 'Tumis Sapi dengan Choy Sum',
-    emoji: '🌿',
+    image: '/recipes/8.png',
     time: '15 min',
     servings: '2',
     ingredients: [
@@ -426,7 +426,7 @@ const recipes: Recipe[] = [
     titleEN: 'Braised Beef Brisket Stew',
     titleTL: 'Beef Brisket Stew na may Patatas',
     titleID: 'Semur Daging Sapi Sandung Lamur',
-    emoji: '🍛',
+    image: '/recipes/9.png',
     time: '120 min',
     servings: '4',
     ingredients: [
@@ -467,7 +467,7 @@ const recipes: Recipe[] = [
     titleEN: 'Satay Beef & Enoki Pot',
     titleTL: 'Satay Beef & Enoki Pot',
     titleID: 'Sapi Satay & Jamur Enoki',
-    emoji: '🍄',
+    image: '/recipes/10.png',
     time: '15 min',
     servings: '2',
     ingredients: [
@@ -508,7 +508,7 @@ const recipes: Recipe[] = [
     titleEN: 'Beef with Onions',
     titleTL: 'Baka na may Sibuyas',
     titleID: 'Sapi dengan Bawang Bombay',
-    emoji: '🧅',
+    image: '/recipes/11.png',
     time: '15 min',
     servings: '2',
     ingredients: [
@@ -542,7 +542,7 @@ const recipes: Recipe[] = [
     titleEN: 'Tomato Beef Stew',
     titleTL: 'Tomato Beef Stew',
     titleID: 'Semur Tomat Sapi',
-    emoji: '🍅',
+    image: '/recipes/12.png',
     time: '20 min',
     servings: '2',
     ingredients: [
@@ -582,7 +582,7 @@ const recipes: Recipe[] = [
     titleEN: 'Curry Beef Rib Fingers',
     titleTL: 'Curry Beef Ribs',
     titleID: 'Kari Iga Sapi',
-    emoji: '🍛',
+    image: '/recipes/23.png',
     time: '60 min',
     servings: '2-3',
     ingredients: [
@@ -629,7 +629,7 @@ const recipes: Recipe[] = [
     titleEN: 'Tomato Minced Beef',
     titleTL: 'Giniling na Baka na may Kamatis',
     titleID: 'Daging Sapi Cincang Saus Tomat',
-    emoji: '🍝',
+    image: '/recipes/25.png',
     time: '25 min',
     servings: '2-3',
     ingredients: [
@@ -680,7 +680,7 @@ const recipes: Recipe[] = [
     titleEN: 'Braised Chicken Wings w/ Potato',
     titleTL: 'Chicken Wings na may Patatas',
     titleID: 'Sayap Ayam Braised dengan Kentang',
-    emoji: '🥔',
+    image: '/recipes/13.png',
     time: '30 min',
     servings: '3',
     ingredients: [
@@ -722,7 +722,7 @@ const recipes: Recipe[] = [
     titleEN: 'Chicken Fillet with Broccoli',
     titleTL: 'Chicken Fillet na may Brokoli',
     titleID: 'Fillet Ayam dengan Brokoli',
-    emoji: '🥢',
+    image: '/recipes/14.png',
     time: '20 min',
     servings: '2',
     ingredients: [
@@ -763,7 +763,7 @@ const recipes: Recipe[] = [
     titleEN: 'Lemon Chicken Wings',
     titleTL: 'Lemon Chicken Wings',
     titleID: 'Sayap Ayam Lemon',
-    emoji: '🍋',
+    image: '/recipes/15.png',
     time: '25 min',
     servings: '3',
     ingredients: [
@@ -804,7 +804,7 @@ const recipes: Recipe[] = [
     titleEN: 'Steamed Chicken w/ Carrot',
     titleTL: 'Steamed Chicken na may Karot',
     titleID: 'Ayam Kukus dengan Wortel',
-    emoji: '🥕',
+    image: '/recipes/16.png',
     time: '25 min',
     servings: '3',
     ingredients: [
@@ -845,7 +845,7 @@ const recipes: Recipe[] = [
     titleEN: 'Pan-fried Chicken w/ Onion',
     titleTL: 'Piniritong Manok na may Sibuyas',
     titleID: 'Ayam Goreng dengan Bawang Bombay',
-    emoji: '🍳',
+    image: '/recipes/17.png',
     time: '20 min',
     servings: '2',
     ingredients: [
@@ -885,7 +885,7 @@ const recipes: Recipe[] = [
     titleEN: 'Diced Chicken w/ Corn & Carrot',
     titleTL: 'Chicken Cubes na may Mais at Karot',
     titleID: 'Ayam Dadu dengan Jagung & Wortel',
-    emoji: '🌽',
+    image: '/recipes/18.png',
     time: '15 min',
     servings: '2',
     ingredients: [
@@ -927,7 +927,7 @@ const recipes: Recipe[] = [
     titleEN: 'Pan-fried Salmon',
     titleTL: 'Piniritong Salmon',
     titleID: 'Salmon Goreng Pan',
-    emoji: '🐟',
+    image: '/recipes/26.png',
     time: '15 min',
     servings: '2',
     ingredients: [
@@ -967,7 +967,7 @@ const recipes: Recipe[] = [
     titleEN: 'Stir-fried Shrimp with Eggs',
     titleTL: 'Ginisang Hipon na may Itlog',
     titleID: 'Tumis Udang Telur',
-    emoji: '🦐',
+    image: '/recipes/28.png',
     time: '15 min',
     servings: '2-3',
     ingredients: [
@@ -1010,7 +1010,7 @@ const recipes: Recipe[] = [
     titleEN: 'Steamed Eggs',
     titleTL: 'Steamed Egg',
     titleID: 'Tim Telur',
-    emoji: '🥚',
+    image: '/recipes/29.png',
     time: '15 min',
     servings: '2',
     ingredients: [
@@ -1050,7 +1050,7 @@ const recipes: Recipe[] = [
     titleEN: 'Stir-fried Tomato and Eggs',
     titleTL: 'Ginisang Kamatis at Itlog',
     titleID: 'Tumis Tomat Telur',
-    emoji: '🍅',
+    image: '/recipes/30.png',
     time: '15 min',
     servings: '2',
     ingredients: [
@@ -1093,7 +1093,7 @@ const recipes: Recipe[] = [
     titleEN: 'Garlic Stir-fry Mixed Veggies',
     titleTL: 'Ginisang Gulay (Mixed Veggies)',
     titleID: 'Tumis Sayur Campur Bawang Putih',
-    emoji: '🥗',
+    image: '/recipes/19.png',
     time: '10 min',
     servings: '2',
     ingredients: [
@@ -1133,7 +1133,7 @@ const recipes: Recipe[] = [
     titleEN: 'Napa Cabbage in Broth',
     titleTL: 'Napa Cabbage sa Sabaw',
     titleID: 'Sawi Putih Kuah Kaldu',
-    emoji: '🥣',
+    image: '/recipes/20.png',
     time: '15 min',
     servings: '3',
     ingredients: [
@@ -1173,7 +1173,7 @@ const recipes: Recipe[] = [
     titleEN: 'Stir-fry Potato & Carrot Shreds',
     titleTL: 'Ginisang Patatas at Karot',
     titleID: 'Tumis Irisan Kentang & Wortel',
-    emoji: '🍟',
+    image: '/recipes/21.png',
     time: '15 min',
     servings: '2',
     ingredients: [
@@ -1214,7 +1214,7 @@ const recipes: Recipe[] = [
     titleEN: 'Poached Choy Sum',
     titleTL: 'Nilagang Choy Sum',
     titleID: 'Rebus Choy Sum',
-    emoji: '🥬',
+    image: '/recipes/22.png',
     time: '8 min',
     servings: '2',
     ingredients: [
@@ -1253,7 +1253,7 @@ const recipes: Recipe[] = [
     titleEN: 'Stir-fried Cabbage',
     titleTL: 'Ginisang Repolyo',
     titleID: 'Tumis Kubis',
-    emoji: '🥗',
+    image: '/recipes/27.png',
     time: '10 min',
     servings: '2',
     ingredients: [
@@ -1294,7 +1294,7 @@ const recipes: Recipe[] = [
     titleEN: 'Tomato Potato Pork Soup',
     titleTL: 'Sopas na Kamatis, Patatas at Baboy',
     titleID: 'Sup Tomat Kentang Daging Babi',
-    emoji: '🥘',
+    image: '/recipes/31.png',
     time: '60 min',
     servings: '3-4',
     ingredients: [
@@ -1446,12 +1446,21 @@ const App = () => {
               onClick={() => setSelectedRecipe(recipe)}
               className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow cursor-pointer overflow-hidden border-b-4 border-orange-200 flex flex-col h-full transform hover:-translate-y-1 duration-200"
             >
-              {/* Card Image Area (Cartoon Placeholder) */}
-              <div className="h-40 bg-orange-100 flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-yellow-200 opacity-20 pattern-dots"></div>
-                <span className="text-8xl transform group-hover:scale-110 transition-transform duration-300 drop-shadow-md filter">{recipe.emoji}</span>
-                <div className="absolute bottom-2 right-2 bg-white/80 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-bold text-orange-600 flex items-center shadow-sm">
-                  <Clock size={12} className="mr-1" /> {recipe.time}
+              {/* Card Image Area (Replaces Cartoon) */}
+              <div className="h-48 w-full overflow-hidden relative group bg-gray-100">
+                <img 
+                  src={recipe.image} 
+                  alt={recipe.titleEN} 
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  onError={(e) => {
+                    // Fallback if image not found
+                    (e.target as HTMLImageElement).src = 'https://placehold.co/600x400/orange/white?text=No+Image';
+                  }}
+                />
+                <div className="absolute bottom-0 right-0 p-2 bg-gradient-to-l from-black/60 to-transparent w-full flex justify-end">
+                  <div className="bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg text-xs font-bold text-orange-600 flex items-center shadow-sm">
+                    <Clock size={12} className="mr-1" /> {recipe.time}
+                  </div>
                 </div>
               </div>
 
@@ -1461,7 +1470,7 @@ const App = () => {
                   <h3 className="font-bold text-lg text-gray-800 leading-snug">{recipe.titleZH}</h3>
                 </div>
                 {/* Dynamic Second Language Title */}
-                <p className="text-sm text-gray-500 font-medium mb-3">
+                <p className="text-sm text-gray-500 font-medium mb-3 line-clamp-1">
                   {getTrans(recipe, 'title')}
                 </p>
                 
@@ -1486,14 +1495,21 @@ const App = () => {
             onClick={e => e.stopPropagation()}
           >
             {/* Modal Header Image */}
-            <div className="bg-orange-100 h-48 flex items-center justify-center relative">
+            <div className="h-64 w-full relative bg-gray-100">
+               <img 
+                  src={selectedRecipe.image} 
+                  alt={selectedRecipe.titleEN} 
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = 'https://placehold.co/600x400/orange/white?text=No+Image';
+                  }}
+                />
                <button 
                 onClick={() => setSelectedRecipe(null)}
-                className="absolute top-4 right-4 bg-white/50 hover:bg-white p-2 rounded-full text-gray-600 transition-colors"
+                className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 p-2 rounded-full text-white transition-colors backdrop-blur-sm"
               >
                 <X size={24} />
               </button>
-              <span className="text-9xl drop-shadow-lg filter">{selectedRecipe.emoji}</span>
             </div>
 
             {/* Modal Content */}
