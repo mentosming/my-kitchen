@@ -1327,58 +1327,6 @@ const recipes: Recipe[] = [
       }
     ],
     tags: ['Soup', 'Vitamin C']
-  },
-
-  // --- NEW RECIPES ---
-  {
-    id: 32,
-    category: 'pork',
-    titleZH: '泰式炒肉碎 (打拋豬)',
-    titleEN: 'Thai Basil Minced Pork',
-    titleTL: 'Pad Kra Pao (Giniling na Baboy)',
-    titleID: 'Tumis Daging Babi Kemangi (Pad Kra Pao)',
-    image: '/recipes/32.png',
-    time: '20 min',
-    servings: '2-3',
-    ingredients: [
-      { zh: '免治豬肉 300g', en: 'Minced Pork 300g', tl: 'Giniling na Baboy 300g', id: 'Daging Babi Cincang 300g' },
-      { zh: '九層塔/羅勒 1碗', en: 'Thai Basil 1 bowl', tl: 'Basil leaves 1 bowl', id: 'Daun Kemangi 1 mangkuk' },
-      { zh: '蒜頭/紅蔥頭 切碎', en: 'Minced Garlic/Shallot', tl: 'Bawang/Sibuyas (tadtad)', id: 'Bawang Putih/Merah Cincang' },
-      { zh: '指天椒 2隻 (切碎)', en: 'Chili 2 (Chopped)', tl: 'Sili 2 (Tadtad)', id: 'Cabai Rawit 2 (Cincang)' }
-    ],
-    seasoning: [
-      { zh: '魚露 1湯匙', en: 'Fish Sauce 1 tbsp', tl: 'Patis 1 tbsp', id: 'Kecap Ikan 1 sdm' },
-      { zh: '蠔油 1湯匙', en: 'Oyster Sauce 1 tbsp', tl: 'Oyster Sauce 1 tbsp', id: 'Saus Tiram 1 sdm' },
-      { zh: '生抽/老抽/糖', en: 'Soy/Dark Soy/Sugar', tl: 'Toyo/Dark Soy/Asukal', id: 'Kecap Asin/Pekat/Gula' },
-      { zh: '水 少許', en: 'Water splash', tl: 'Tubig konti', id: 'Air sedikit' }
-    ],
-    steps: [
-      { 
-        zh: '爆香蒜末、紅蔥頭和辣椒。', 
-        en: 'Stir-fry garlic, shallot and chili until fragrant.',
-        tl: 'Igisa ang bawang, sibuyas at sili hanggang bumango.',
-        id: 'Tumis bawang putih, merah & cabai hingga harum.'
-      },
-      { 
-        zh: '加入免治豬肉炒至散開變色。', 
-        en: 'Add minced pork, stir-fry until color changes.',
-        tl: 'Ilagay ang giniling, lutuin hanggang mag-iba ang kulay.',
-        id: 'Masukkan daging cincang, tumis hingga berubah warna.'
-      },
-      { 
-        zh: '加入調味料兜勻，最後放入九層塔炒至軟身即可。', 
-        en: 'Add seasoning, stir well. Add basil last, cook until wilted.',
-        tl: 'Ilagay ang pampalasa. Huli ang basil, lutuin sandali.',
-        id: 'Tambahkan bumbu, aduk. Masukkan kemangi terakhir, masak hingga layu.'
-      },
-      { 
-        zh: '配上煎蛋和白飯一流。', 
-        en: 'Serve with fried egg and rice.',
-        tl: 'Ihain kasama ang pritong itlog at kanin.',
-        id: 'Sajikan dengan telur mata sapi dan nasi.'
-      }
-    ],
-    tags: ['Spicy', 'Thai']
   }
 ];
 
@@ -1386,6 +1334,7 @@ const App = () => {
   const [filter, setFilter] = useState<'all' | Category>('all');
   const [lang, setLang] = useState<Language>('en'); // Default to English
   const [selectedRecipe, setSelectedRecipe] = useState<Recipe | null>(null);
+  const [logoError, setLogoError] = useState(false);
 
   const filteredRecipes = recipes.filter(r => {
     if (filter === 'all') return true;
@@ -1441,25 +1390,22 @@ const App = () => {
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
           <div className="flex items-center">
-            {/* Logo Image - Replaces text title */}
-            <img 
-              src="/logo.jpg" 
-              alt="家常小菜 Daily Home Cooking" 
-              className="h-14 md:h-16 w-auto object-contain"
-              onError={(e) => {
-                // Fallback: Show text if logo is missing
-                (e.target as HTMLImageElement).style.display = 'none';
-                const fallback = document.getElementById('logo-fallback');
-                if (fallback) fallback.style.display = 'flex';
-              }} 
-            />
-            {/* Fallback (Hidden by default) */}
-            <div id="logo-fallback" style={{ display: 'none' }} className="items-center space-x-2">
-               <div className="bg-orange-400 p-2 rounded-full text-white">
-                  <ChefHat size={24} />
-                </div>
-                <h1 className="text-xl font-bold text-orange-600 leading-tight">家常小菜</h1>
-            </div>
+            {/* Logo Image with Fallback */}
+            {!logoError ? (
+              <img 
+                src="/logo.jpg" 
+                alt="家常小菜 Daily Home Cooking" 
+                className="h-14 md:h-16 w-auto object-contain"
+                onError={() => setLogoError(true)}
+              />
+            ) : (
+              <div className="flex items-center space-x-2">
+                 <div className="bg-orange-400 p-2 rounded-full text-white">
+                    <ChefHat size={24} />
+                  </div>
+                  <h1 className="text-xl font-bold text-orange-600 leading-tight">家常小菜 Daily Home Cooking</h1>
+              </div>
+            )}
           </div>
 
           {/* Language Selector (Dropdown) */}
