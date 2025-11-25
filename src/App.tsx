@@ -1439,13 +1439,26 @@ const App = () => {
     <div className="min-h-screen bg-orange-50 font-sans text-gray-800 pb-10">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="bg-orange-400 p-2 rounded-full text-white">
-              <ChefHat size={24} />
-            </div>
-            <div>
-              <h1 className="text-xl font-bold text-orange-600 leading-tight">家常小菜 Daily Home Cooking</h1>
+        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center">
+            {/* Logo Image - Replaces text title */}
+            <img 
+              src="/logo.jpg" 
+              alt="家常小菜 Daily Home Cooking" 
+              className="h-14 md:h-16 w-auto object-contain"
+              onError={(e) => {
+                // Fallback: Show text if logo is missing
+                (e.target as HTMLImageElement).style.display = 'none';
+                const fallback = document.getElementById('logo-fallback');
+                if (fallback) fallback.style.display = 'flex';
+              }} 
+            />
+            {/* Fallback (Hidden by default) */}
+            <div id="logo-fallback" style={{ display: 'none' }} className="items-center space-x-2">
+               <div className="bg-orange-400 p-2 rounded-full text-white">
+                  <ChefHat size={24} />
+                </div>
+                <h1 className="text-xl font-bold text-orange-600 leading-tight">家常小菜</h1>
             </div>
           </div>
 
