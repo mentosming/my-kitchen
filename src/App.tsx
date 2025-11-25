@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Search, ChefHat, Utensils, BookOpen, Clock, Users, X } from 'lucide-react';
+import { useState } from 'react';
+import { ChefHat, Utensils, BookOpen, Clock, Users, X } from 'lucide-react';
 
 // Types
 type Ingredient = {
