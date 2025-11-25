@@ -625,43 +625,51 @@ const recipes: Recipe[] = [
   {
     id: 25,
     category: 'beef',
-    titleZH: '免治牛肉煎蛋',
-    titleEN: 'Minced Beef Omelette',
-    titleTL: 'Tortang Giniling na Baka',
-    titleID: 'Telur Dadar Daging Sapi Cincang',
-    emoji: '🍳',
-    time: '15 min',
-    servings: '2',
+    titleZH: '蕃茄免治牛肉',
+    titleEN: 'Tomato Minced Beef',
+    titleTL: 'Giniling na Baka na may Kamatis',
+    titleID: 'Daging Sapi Cincang Saus Tomat',
+    emoji: '🍝',
+    time: '25 min',
+    servings: '2-3',
     ingredients: [
-      { zh: '免治牛肉 200g', en: 'Minced Beef 200g', tl: 'Giniling na Baka 200g', id: 'Daging Sapi Cincang 200g' },
-      { zh: '雞蛋 3隻', en: 'Eggs 3', tl: 'Itlog 3', id: 'Telur 3' },
-      { zh: '蔥花 少許', en: 'Scallion', tl: 'Sibuyas na Mura', id: 'Daun Bawang' }
+      { zh: '免治牛肉 300g (醃製)', en: 'Minced Beef 300g (Marinated)', tl: 'Giniling na Baka 300g (Marinated)', id: 'Daging Sapi Cincang 300g (Marinasi)' },
+      { zh: '番茄 2個 (切丁)', en: 'Tomatoes 2 (Diced)', tl: 'Kamatis 2 (Hiniwa)', id: 'Tomat 2 (Potong Dadu)' },
+      { zh: '洋蔥 1個 (切末)', en: 'Onion 1 (Minced)', tl: 'Sibuyas 1 (Tadtad)', id: 'Bawang Bombay 1 (Cincang)' },
+      { zh: '胡蘿蔔 半條 (切丁 - 選用)', en: 'Carrot 1/2 (Diced - Opt)', tl: 'Karot 1/2 (Hiniwa - Opt)', id: 'Wortel 1/2 (Potong Dadu - Opsi)' }
     ],
     seasoning: [
-      { zh: '生抽 1茶匙', en: 'Soy Sauce 1 tsp', tl: 'Toyo 1 tsp', id: 'Kecap Asin 1 sdt' },
-      { zh: '糖/胡椒粉', en: 'Sugar/Pepper', tl: 'Asukal/Paminta', id: 'Gula/Lada' }
+      { zh: '番茄醬/茄膏 2湯匙', en: 'Ketchup/Tomato Paste 2 tbsp', tl: 'Ketchup 2 tbsp', id: 'Saus Tomat/Pasta Tomat 2 sdm' },
+      { zh: '生抽/蠔油/糖', en: 'Soy/Oyster Sauce/Sugar', tl: 'Toyo/Oyster Sauce/Asukal', id: 'Kecap Asin/Saus Tiram/Gula' },
+      { zh: '生粉水 (埋芡)', en: 'Cornstarch Slurry', tl: 'Cornstarch Slurry', id: 'Larutan Maizena' }
     ],
     steps: [
       { 
-        zh: '牛肉用調味醃10分鐘，炒熟盛起。', 
-        en: 'Marinate beef 10 mins, stir-fry until cooked, remove.',
-        tl: 'Ibabad ang baka ng 10 mins, lutuin, hanguin.',
-        id: 'Marinasi sapi 10 mnt, tumis matang, angkat.'
+        zh: '牛肉用醬油蠔油糖醃15分鐘。蔬菜切丁。', 
+        en: 'Marinate beef 15 mins. Chop veggies.',
+        tl: 'Ibabad ang baka ng 15 mins. Hiwain ang gulay.',
+        id: 'Marinasi daging 15 mnt. Potong sayur.'
       },
       { 
-        zh: '雞蛋打勻，加入蔥花和已熟牛肉。', 
-        en: 'Beat eggs, add scallion and cooked beef.',
-        tl: 'Batihin ang itlog, ihalo ang sibuyas at lutong baka.',
-        id: 'Kocok telur, tambah daun bawang & sapi matang.'
+        zh: '爆香洋蔥，加入牛肉炒至八成熟盛起。', 
+        en: 'Fry onion until fragrant. Add beef, cook med-rare, remove.',
+        tl: 'Igisa ang sibuyas. Ilagay ang baka, lutuin ng bahagya, hanguin.',
+        id: 'Tumis bawang bombay. Masukkan daging, masak setengah matang, angkat.'
       },
       { 
-        zh: '熱鑊下油，煎蛋至兩面金黃。', 
-        en: 'Pan-fry egg mixture until golden on both sides.',
-        tl: 'Iprito ang itlog hanggang golden.',
-        id: 'Goreng telur hingga keemasan di kedua sisi.'
+        zh: '炒軟番茄，加入番茄醬、調味和水煮滾。', 
+        en: 'Fry tomatoes soft. Add ketchup, seasoning & water, simmer.',
+        tl: 'Igisa ang kamatis. Ilagay ang ketchup, pampalasa at tubig, pakuluin.',
+        id: 'Tumis tomat sampai layu. Masukkan saus tomat, bumbu & air, didihkan.'
+      },
+      { 
+        zh: '牛肉回鑊兜勻，生粉水埋芡。', 
+        en: 'Add beef back. Thicken sauce with starch.',
+        tl: 'Ibalik ang baka. Palaputin ang sabaw.',
+        id: 'Masukkan kembali daging. Kentalkan kuah.'
       }
     ],
-    tags: ['Easy', 'Protein']
+    tags: ['Appetizing', 'Saucy']
   },
 
   // --- CHICKEN RECIPES ---
