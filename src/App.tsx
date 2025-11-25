@@ -1375,20 +1375,6 @@ const App = () => {
     }
   };
 
-  const toggleLanguage = () => {
-    if (lang === 'en') setLang('tl');
-    else if (lang === 'tl') setLang('id');
-    else setLang('en');
-  };
-
-  const getLanguageLabel = () => {
-    switch(lang) {
-      case 'en': return '中 / 英 (EN)';
-      case 'tl': return '中 / 菲 (PH)';
-      case 'id': return '中 / 印 (IN)';
-    }
-  };
-
   return (
     <div className="min-h-screen bg-orange-50 font-sans text-gray-800 pb-10">
       {/* Header */}
